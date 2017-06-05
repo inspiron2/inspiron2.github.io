@@ -1,7 +1,7 @@
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate || false;
 
 if (navigator.vibrate) {
-	alert("ya");
+
 	$("#vibrate-one-second").on("click", function () {		
 		navigator.vibrate(200);
 	});
