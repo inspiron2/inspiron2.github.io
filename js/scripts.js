@@ -1,4 +1,4 @@
-// Empty JS for your own code to be here
+alert("yes");
 document.querySelector("#vibrate-one-second").addEventListener("click", function () {
     navigator.mozVibrate(1000);
 }, false);
