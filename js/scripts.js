@@ -6,7 +6,7 @@ if (navigator.vibrate) {
 		navigator.vibrate(200);
 	});
 	$("#vibrate-twice").on("click", function () {		
-		navigator.vibrate([200, 100]);
+		navigator.vibrate([200, 100, 300]);
 	});
 	$("#vibrate-long-time").on("click", function () {
 		navigator.vibrate([2000]);
