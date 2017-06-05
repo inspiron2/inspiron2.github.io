@@ -2,23 +2,24 @@ navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mo
 
 if (navigator.vibrate) {
 	$("#vibrate-one-second").on("click", function () {
-        alert("yes no");
-        navigator.vibrate(1000);
+        navigator.vibrate(200);
     });
+	$("#vibrate-twice").on("click", function () {
+	    navigator.vibrate([200, 100]);
+	});
+	$("#vibrate-long-time").on("click", function () {
+    navigator.vibrate(5000);
+});
+
+$("#vibrate-off").on("click", function () {
+     navigator.vibrate(0);
+ });
 }
 
 
 
 
-document.querySelector("#vibrate-twice").addEventListener("click", function () {
-    navigator.mozVibrate([200, 100, 200, 100]);
-}, false);
 
 
-document.querySelector("#vibrate-long-time").addEventListener("click", function () {
-    navigator.mozVibrate(5000);
-}, false);
 
-document.querySelector("#vibrate-off").addEventListener("click", function () {
-     navigator.mozVibrate(0);
- }, false);
+
