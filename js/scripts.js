@@ -1,7 +1,7 @@
-alert("yes");
-document.querySelector("#vibrate-one-second").addEventListener("click", function () {
-    navigator.mozVibrate(1000);
-}, false);
+alert("yes no");
+$("#vibrate-one-second").on("click", function () {
+    navigator.vibrate(1000);
+});
 
 document.querySelector("#vibrate-twice").addEventListener("click", function () {
     navigator.mozVibrate([200, 100, 200, 100]);
