@@ -1,26 +1,23 @@
-navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate || false;
 
 if (navigator.vibrate) {
 	alert("ya");
-	$("#vibrate-one-second").on("click", function () {
-	alert("ya1");
-		
+	$("#vibrate-one-second").on("click", function () {		
 		navigator.vibrate(200);
 	});
-	$("#vibrate-twice").on("click", function () {
-	alert("ya2");
-		
+	$("#vibrate-twice").on("click", function () {		
 		navigator.vibrate([200, 100]);
 	});
 	$("#vibrate-long-time").on("click", function () {
-		navigator.vibrate(2000);
+		navigator.vibrate([2000]);
 	});
 
-	$("#vibrate-off").on("click", function () {
-	alert("ya4");
-		
+	$("#vibrate-off").on("click", function () {		
 		navigator.vibrate(0);
 	});
+}
+else{
+	alert("Not supported");
 }
 
 
