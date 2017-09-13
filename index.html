@@ -1,50 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Lame Website!</title>
-
-    <meta name="description" content="">
-    <meta name="author" >
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing Copy on IOS devices</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
 
-  </head>
-  <body>
+    <input value="Some long text to copy and a https://url.com" id="copyIos"/> <br><br>
+    <button class="btn btn-success copy"> copy</button>
 
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
 
-				<h3 class="r">
-					HTML5 Vibration API!!!!!
-				</h3> 
-
-			<button type="button"  id="vibrate-one-second" class="btn btn-xs btn-info"  style="display:block;">
-				Vi......
-			</button> 
-			<br/>
-			<button type="button" id="vibrate-twice" class="btn btn-primary btn-sm"  style="display:block">
-				Vib......
-			</button>
-		<br/>
-			<button type="button" id="vibrate-long-time" class="btn btn-success btn-default"  style="display:block">
-				Vibrat
-			</button> 
-		<br/>	
-	    <button type="button" id="vibrate-off" class="btn btn-lg btn-danger"  style="display:block">
-				VIBRATEEEEE OFF
-			</button>
-		</div>
-	</div>
-</div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+    
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/copy2clipboard.js"></script>
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){   
+        $('.copy').on('click',function() {              
+            select_all_and_copy(document.getElementById("copyIos"));
+        });    
+    });
+</script>
 </html>
