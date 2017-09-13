@@ -17,7 +17,7 @@ if (navigator.vibrate) {
 	});
 }
 else{
-	alert("Not supported");
+	//alert("Not supported");
 }
 
 
