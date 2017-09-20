@@ -31,8 +31,7 @@ var SharedService = (function () {
         this.weatherURL2 = "%2C%20";
         this.weatherURL3 = "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
         this.findMovieURL1 = "https://api.themoviedb.org/3/search/movie?api_key=0d6c3b37000d9f615c55834394f01261&query=";
-        this.currencyURL = "http://apilayer.net/api/live?access_key=0f1e2d1576ef18320891e366b964e87c&currencies=";
-        this.currencyURL1 = "&source=USD&format=1";
+        this.currencyURL = "https://api.fixer.io/latest?symbols=";
         this.totReqsMade = 0;
     }
     SharedService.prototype.findWeather = function (city, state) {
@@ -59,7 +58,7 @@ var SharedService = (function () {
     };
     SharedService.prototype.getCurrencyExchRate = function (currency) {
         this.totReqsMade = this.totReqsMade + 1;
-        return this._http.get(this.currencyURL + currency + this.currencyURL1)
+        return this._http.get(this.currencyURL + currency)
             .map(function (response) {
             {
                 return response.json();
@@ -108,9 +107,9 @@ var CurrencyComponent = (function () {
         var _this = this;
         this._sharedService.getCurrencyExchRate(this.id_currency.toUpperCase())
             .subscribe(function (lstresult) {
-            _this.base = lstresult.source;
-            _this.dated = new Date(lstresult.timestamp * 1000);
-            _this.rate = JSON.stringify(lstresult.quotes[lstresult.source + _this.id_currency.toUpperCase()]);
+            _this.base = lstresult.base;
+            _this.dated = lstresult.date;
+            _this.rate = lstresult.rates[_this.id_currency.toUpperCase()];
         }, function (error) {
             console.log("Error. The callCurrencyService result JSON value is as follows:");
             console.log(error);
